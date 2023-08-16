@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">Logo</a>
+        <div class="group">
+            <ul class="navigation">
+                <li><a href="">Home</a></li>
+                <li><a href="">About</a></li>
+                <li><a href="">Service</a></li>
+                <li><a href="">Blog</a></li>
+                <li><a href="">Contact</a></li>
+            </ul>
+            <div class="search">
+                <span class="icon">
+                    <i id="searchBtn" class="fa-solid fa-magnifying-glass"></i>
+                    <i id="closeBtn" class="fa fa-times" aria-hidden="true"></i>
+                </span>
+            </div>
+            <i id="menuToggle" class="fa-solid fa-bars"></i>
+            <div class="searchBox">
+                <input type="text" placeholder="Search">
+            </div>
+        </div>
+    </header>
+    <script>
+        let searchBtn = document.querySelector('#searchBtn');
+        let closeBtn = document.querySelector('#closeBtn');
+        let searchBox = document.querySelector('.searchBox');
+        let navigation = document.querySelector('.navigation');
+        let menuToggle = document.querySelector('#menuToggle');
+        let header = document.querySelector('header');
+        searchBtn.onclick = function(){
+            searchBox.classList.add('active');
+            // add a class to the class
+            closeBtn.classList.add('active');
+            searchBtn.classList.add('active');
+            menuToggle.classList.add('hide');
+            header.classList.remove('open');
+        }
+        closeBtn.onclick = function(){
+            searchBox.classList.remove('active');
+            closeBtn.classList.remove('active');
+            searchBtn.classList.remove('active');
+            menuToggle.classList.remove('hide');
+        }
+        //for the menue
+        menuToggle.onclick = function(){
+            header.classList.toggle('open');
+            closeBtn.classList.remove('active');
+            searchBtn.classList.remove('active');
+            menuToggle.classList.remove('active');
+        }
+</script>
+</body>
+</html>
