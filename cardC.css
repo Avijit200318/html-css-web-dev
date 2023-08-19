@@ -1,0 +1,160 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: consolas;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* min-height: 100vh; */
+    background: #111;
+}
+.container{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 0;
+    flex-wrap: wrap;
+}
+.container .box{
+    position: relative;
+    /* width: 320px;
+    height: 400px; */
+    width: 304px;
+    /* height: 364px; */
+    height: 350px;
+    color: #fff;
+    background: #111;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 30px;
+    transition: 0.5s;
+}
+/* this help us when we hover the card then they move alog the axsis */
+.container .box:hover{
+    transform: translateY(-20px);
+}
+.container .box::before{
+    content:'';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* this creat the card color */
+    background: linear-gradient(45deg, #ffbc00,#ff0058);
+}
+.container .box::after{
+    content:'';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* this creat the card color */
+    background: linear-gradient(45deg, #ffbc00,#ff0058);
+    filter: blur(30px);
+    /* this creat the glowing light effect */
+}
+.container .box:nth-child(2)::before,
+.container .box:nth-child(2)::after{
+    background: linear-gradient(315deg, #03a9f4, #ff0058);
+}
+
+.container .box:nth-child(3)::before,
+.container .box:nth-child(3)::after{
+    background: linear-gradient(315deg, #4dff03, #00d0ff);
+}
+
+.container .box:nth-child(4)::before,
+.container .box:nth-child(4)::after{
+    background: linear-gradient(315deg, #033eff, #00d0ff);
+}
+
+.container .box span{
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    right: 6px;
+    bottom: 6px;
+    /* background: #000; */
+    /* now we can see the border of all cards */
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 2;
+}
+.container .box span::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    pointer-events: none;
+}
+.container .box .content{
+    z-index: 10;
+    /* padding: 20px 40px; */
+    padding: 0 40px;
+
+}
+.container .box .content h2{
+    /* font-size: 2em; */
+    font-size: 25px;
+    color: #fff;
+    margin: 5px;
+}
+.container .box .content p{
+    /* font-size: 1.1em; */
+    font-size: 14px;
+    color: #fff;
+    margin-bottom: 10px;
+    line-height: 1.4em;
+}
+.container .box .content a{
+    display: inline-block;
+    /* font-size: 1.4em; */
+    font-size: 15px;
+    color: #111;
+    background: #fff;
+    padding: 6px;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 3px;
+}
+.container .box .content a:hover{
+    background: rgb(76, 76, 179);
+    color: white;
+    border: 2px solid white;
+}
+#image{
+    width: 250px;
+    border-radius: 4px;
+}
+
+@media (max-width: 830px)
+{
+    #image{
+        width: 225px;
+    }
+    .container .box{
+        width: 262px;
+        height: 300px;
+    }
+    .container .box .content h2{
+        font-size: 20px;
+        margin: 5px;
+    }
+    .container .box .content p{
+        font-size: 12px;
+        margin-bottom: 10px;
+        line-height: 13px;
+    }
+    .container .box .content a{
+        font-size: 14px;
+    }
+}
