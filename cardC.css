@@ -158,3 +158,22 @@ body{
         font-size: 14px;
     }
 }
+
+@media (max-width: 420px)
+{
+    #image{
+        width: 138px;
+    }
+    .container .box{
+        width: 160px;
+        height: 192px;
+        margin: 20px 10px;
+    }
+    .container .box .content p{
+        display: none;
+        /* if we want to display some thing then cut this line */
+    }
+    .container .box .content a{
+        display: none;
+    }
+}
