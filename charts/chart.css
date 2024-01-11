@@ -1,0 +1,14 @@
+.container{
+    display: flex;
+    gap: 100px;
+}
+#barchart{
+    width: 40vw !important;
+    height: 60vh !important;
+    background: yellow;
+}
+#doughnut{
+    width: 50vh !important;
+    height: 50vh !important;
+    background: gainsboro;
+}
