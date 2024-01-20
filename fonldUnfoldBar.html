@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Epcot Center</title>
+  <style>
+    /* Style to hide the content initially */
+    details[open] > summary + * {
+      animation: unfold 0.75s ease-in-out;
+    }
+
+    @keyframes unfold {
+      from {
+        opacity: 0;
+        height: 0;
+      }
+      to {
+        opacity: 1;
+        height: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Use a button to toggle the details tag -->
+  <button onclick="toggleDetails()">Toggle Epcot Details</button>
+
+  <!-- Details tag with the summary and content -->
+  <details id="epcotDetails">
+    <summary>Epcot Center</summary>
+    <p>Epcot is a theme park at Walt Disney World Resort featuring exciting attractions, international pavilions, award-winning fireworks and seasonal special events.</p>
+  </details>
+
+  <script>
+    // JavaScript function to toggle the details tag
+    function toggleDetails() {
+      var detailsElement = document.getElementById('epcotDetails');
+      detailsElement.open = !detailsElement.open;
+    }
+  </script>
+
+</body>
+</html>
